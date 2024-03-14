@@ -1,3 +1,3 @@
-Java implementation of algorithms taught in ADA class
+C implementation of algorithms taught in ADA class
 
-This directory contains java implementation of all the algorithms covered in the introduction section of ADA class of SDMCET
+This directory contains C implementation of all the algorithms covered in the introduction section of ADA class of SDMCET
