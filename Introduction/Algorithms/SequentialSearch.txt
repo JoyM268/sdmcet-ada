@@ -1,0 +1,17 @@
+Searches for a given value in a given array by sequential search
+
+SequentialSearch(A[0..n −1], K)
+Input: An array A[0..n − 1] and a search key K
+Output: The index of the first element in A that matches K or −1 if there are no matching elements
+
+i <- 0
+while i < n and A[i] ≠ K do
+    i <- i + 1
+if i < n 
+    return i
+else 
+    return −1
+
+Time Complexity: 
+Worst case - O(n)
+Best case - O(1)
