@@ -1,0 +1,13 @@
+Computes gcd(m, n) by Euclid’s algorithm
+ 
+Euclid(m,n)
+Input: Two non negative integers m and n and both are not zero
+Output: Greatest common divisor of m and n
+
+while n ≠ 0 do
+    r <- m mod n
+    m <- n
+    n <- r
+return m
+
+Time complexity: θ(log(min(a, b)))

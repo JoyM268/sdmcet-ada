@@ -1,0 +1,12 @@
+The number of binary digits in n’s binary representation
+
+Binary(n)
+Input: A positive decimal integer n
+Output: The number of binary digits in n’s binary representation
+
+count <- 1
+while n > 1 do
+    count <- count + 1
+    n <- n/2
+return count
+Time complexity: θ(log(n))
