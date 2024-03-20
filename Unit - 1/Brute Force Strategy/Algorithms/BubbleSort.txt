@@ -1,0 +1,12 @@
+Sort a given array by bubble sort
+
+BubbleSort(A[0..n − 1])
+Input: An array A[0..n − 1] of orderable elements
+Output: Array A[0..n − 1] sorted in nondecreasing order
+
+for i <- 0 to n − 2 do
+    for j <- 0 to n − 2 − i do
+        if A[j + 1] < A[j] 
+            swap A[j] and A[j + 1]
+
+Time complexity: θ(n)

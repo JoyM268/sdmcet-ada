@@ -1,0 +1,14 @@
+Sort a given array by selection sort
+
+SelectionSort(A[0..n − 1])
+Input: An array A[0..n − 1] of orderable elements
+Output: Array A[0..n − 1] sorted in non decreasing order
+
+for i <- 0 to n − 2 do
+    min <- i
+    for j <- i + 1 to n − 1 do
+        if A[j] < A[min] 
+            min <- j
+    swap A[i] and A[min]
+
+Time complexity: θ(n)

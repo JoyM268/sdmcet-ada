@@ -1,0 +1,10 @@
+The number of binary digits in n’s binary representation recursively
+
+BinRec(n)
+Input: A positive decimal integer n
+Output: The number of binary digits in n’s binary representation
+
+if n = 1 return 1
+else return BinRec(n/2) + 1
+
+Time complexity: θ(log(n))
