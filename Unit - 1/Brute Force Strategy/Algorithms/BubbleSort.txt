@@ -9,4 +9,4 @@ for i <- 0 to n − 2 do
         if A[j + 1] < A[j] 
             swap A[j] and A[j + 1]
 
-Time complexity: θ(n)
+Time complexity: θ(n^2)
