@@ -11,3 +11,5 @@ for i <- 0 to n − m do
         j <- j + 1
     if j = m return i
 return −1
+
+Time complexity: θ(nm)
