@@ -11,4 +11,4 @@ for i <- 0 to n − 2 do
             min <- j
     swap A[i] and A[min]
 
-Time complexity: θ(n)
+Time complexity: θ(n^2)
