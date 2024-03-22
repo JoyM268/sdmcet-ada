@@ -27,3 +27,5 @@ if i = p
     copy C[j..q − 1]to A[k..p + q −1]
 else 
     copy B[i..p − 1]to A[k..p + q −1]
+
+Time complexity: θ(nlog(n))
