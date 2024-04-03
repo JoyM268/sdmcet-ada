@@ -1,4 +1,4 @@
-Algorith to sort array A[0..n − 1] by recursive mergesort
+Algorithm to sort array A[0..n − 1] by recursive mergesort
 
 Mergesort(A[0..n−1])
 Input: An array A[0..n−1] of orderable elements
