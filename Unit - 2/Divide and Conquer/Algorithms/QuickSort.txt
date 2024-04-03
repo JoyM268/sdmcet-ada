@@ -1,0 +1,32 @@
+Sort a subarray by quicksort
+
+Quicksort(A[0..n-1])
+Input: Subarray of array A[0..n−1], defined by its left and right
+Output: Subarray A[l..r] sorted in nondecreasing order
+
+if l<r
+    s <- Partition(A[l..r])
+    Quicksort(A[l..s−1])
+    Quicksort(A[s+1..r])
+
+
+Partition(A[l..r])
+Input: Subarray of array A[0..n−1], defined by its left and right indices l and r (l < r)
+Output: Partition of A[l..r], with the split position returned as this function's value
+
+p <- A[l]
+i <- l; j <- r + 1
+repeat
+    repeat i <- i + 1 until A[i] ≥ p
+    repeat j <- j − 1 until A[j] ≤ p
+    swap(A[i], A[j])
+until i ≥ j
+swap(A[i], A[j])
+swap(A[l], A[j])
+return j
+
+
+Time complexity: 
+Average case - θ(1.39(nlog(n)))
+Worst case - O(n^2)
+Best case - O(nlog(n))
