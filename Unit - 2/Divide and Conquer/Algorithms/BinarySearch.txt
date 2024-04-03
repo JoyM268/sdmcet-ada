@@ -1,0 +1,18 @@
+Implement non recursive binary search
+
+BinarySearch(A[0..n−1], K)
+Input: An array A[0..n−1]sorted in ascending order and a search key K
+Output: An index of the array's element that is equal to K or −1 if there is no such element
+ 
+l <- 0; r <- n−1
+while l ≤ r do
+    m <- ⌊(l+r)/2⌋
+    if K = A[m]
+        return m
+    else if K < A[m] 
+        r <- m − 1
+    else 
+        l <- m + 1
+return −1
+
+Time complexity: θ(log(n))
