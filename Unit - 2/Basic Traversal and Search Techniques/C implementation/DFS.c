@@ -33,12 +33,12 @@ void dfs(int v, int graph[][MAX], int visitedNodes[], int nodeCount)
 
 void DFS(int graph[][MAX], int visitedNodes[], int nodeCount)
 {
-    int i;
-    for(i = 0; i < nodeCount; i++)
+    int v;
+    for(v = 0; v < nodeCount; v++)
     {
-        if(visitedNodes[i] == 0)
+        if(visitedNodes[v] == 0)
         {
-            dfs(i, graph, visitedNodes, nodeCount);
+            dfs(v, graph, visitedNodes, nodeCount);
         }
     }
 }
