@@ -12,3 +12,5 @@ else
         return temp
     else 
         return A[n − 1]
+
+Time complexity: θ(n)
