@@ -1,0 +1,14 @@
+Determine minimum value in given array recursively
+
+MinElement(A[0..n−1])
+Input: An array A[0..n − 1] of real numbers
+Output: The value of the smallest element in A
+
+if n = 1
+    return A[0]
+else 
+    temp <- MinElement(A[0..n − 2])
+    if temp ≤ A[n − 1]
+        return temp
+    else 
+        return A[n − 1]
