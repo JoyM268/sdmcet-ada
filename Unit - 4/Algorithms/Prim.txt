@@ -1,0 +1,16 @@
+Prim's algorithm for constructing a minimum spanning tree
+
+Prim(G)
+Input: A weighted connected graph G = <V,E>
+Output: ET, the set of edges composing a minimum spanning tree of G
+
+VT <- {v0} //the set of tree vertices can be initialized with any vertex
+ET <- ∅
+for i <- 1 to |V| − 1 do
+    find a minimum-weight edge e∗ = (v∗, u∗) among all the edges (v, u)
+    such that v is in VT and u is in V − VT
+    VT <- VT ∪ {u∗}
+    ET <- ET ∪ {e∗}
+return ET
+
+Time complexity: O(|E|log|V|)
