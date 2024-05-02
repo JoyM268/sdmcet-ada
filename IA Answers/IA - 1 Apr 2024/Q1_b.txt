@@ -1,0 +1,35 @@
+Q1.b. Write a algorithm to sort the elements of the array using merge sort algorithm.
+Analyze the time complexity of the algorithm.
+
+Algorithm to sort array A[0..n − 1] by recursive mergesort
+
+Mergesort(A[0..n−1])
+Input: An array A[0..n−1] of orderable elements
+Output: Array A[0..n−1] sorted in nondecreasing order
+
+if n > 1
+    copy A[0 .. ⌊n/2⌋−1] to B[0 .. ⌊n/2⌋ −1]
+    copy A[⌊n/2	⌋ .. n−1] to C[0 .. ⌈n/2⌉−1]
+    Mergesort(B[0 .. ⌊n/2⌋−1])
+    Mergesort(C[0 .. ⌈n/2⌉−1])
+    Merge(B, C, A)
+
+ 
+Merge(B[0..p−1], C[0..q−1], A[0..p+q−1])
+Input: Arrays B[0..p-1]and C[0..q−1] both sorted
+Output: Sorted array A[0..p+q−1] of the elements of B and C
+
+i <- 0; j <- 0; k <- 0
+while i < p and j < q do
+    if B[i] ≤ C[j]
+        A[k] <- B[i]; i <- i + 1
+    else 
+        A[k] <- C[j]; j <- j + 1
+    k <- k + 1
+if i = p
+    copy C[j..q − 1]to A[k..p + q −1]
+else 
+    copy B[i..p − 1]to A[k..p + q −1]
+
+Time complexity: θ(nlog(n))
+(The time complexity should be derived in the exam with proper explanation.)

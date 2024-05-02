@@ -1,0 +1,20 @@
+Q3.a. Consider the following recursive algorithm.
+Algorithm Riddle(A[0..n-1])
+//input: an array A[0..n-1] of real numbers
+if n = 1
+    return A[0]
+else 
+    temp <- Riddle(A[0..n − 2])
+    if temp ≤ A[n − 1]
+        return temp
+    else 
+        return A[n − 1]
+i. What does this algorithm compute?
+ii. Set up a recurrence relation for the algorithm's basic operation and solve it.
+
+
+i. Smallest element in the array
+ii. T(n) = T(n - 1) + 1 for n > 1
+    T(1) = 0 for n = 1
+    (The recurrence relation must be solved in exam step by step to obtain the time complexity.)
+    Time complexity: θ(n)
