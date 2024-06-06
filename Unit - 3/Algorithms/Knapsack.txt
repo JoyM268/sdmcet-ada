@@ -1,0 +1,13 @@
+Implements the memory function method for the knapsack problem
+
+MFKnapsack(i,j)
+Input: A nonnegative integer i indicating the number of the first items being considered and a nonnegative integer j indicating the knapsack capacity
+Output: The value of an optimal feasible subset of the first i items
+
+if F[i, j] < 0
+    if j < Weights[i]
+        value <- MFKnapsack(i−1, j)
+    else
+        value <- max(MFKnapsack(i−1, j), Values[i] + MFKnapsack(i − 1, j−Weights[i]))
+    F[i, j] <- value
+return F[i, j]

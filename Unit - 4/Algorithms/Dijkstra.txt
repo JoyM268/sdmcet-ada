@@ -1,0 +1,19 @@
+Dijkstra’s algorithm for single-source shortest paths
+
+Dijkstra(G, s)
+Input: A weighted connected graph G = <V,E> with nonnegative weights and its vertex s
+Output: The length dv of a shortest path from s to v and its penultimate vertex pv for every vertex v in V
+
+Initialize(Q)
+for every vertex v in V
+    dv <- ∞; pv <- null
+    Insert(Q, v, dv)
+ds <- 0; Decrease(Q,s,ds)
+VT <- ∅
+for i <- 0 to |V|−1 do
+u∗ <- DeleteMin(Q)
+VT <- VT ∪ {u∗}
+for every vertex u in V − VT that is adjacent to u∗ do
+    if du∗ + w(u∗,u) < du
+        du <- du∗ +w(u∗,u); pu <- u∗
+        Decrease(Q, u, du)

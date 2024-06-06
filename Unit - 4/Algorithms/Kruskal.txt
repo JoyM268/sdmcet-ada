@@ -1,0 +1,16 @@
+Kruskal’s algorithm for constructing a minimum spanning tree
+
+Kruskal(G) 
+Input: A weighted connected graph G = <V,E>
+Output: ET, the set of edges composing a minimum spanning tree of G
+sort E in nondecreasing order of the edge weights w(ei1) ≤...≤ w(ei|E|)
+ET <- ∅; ecounter <- 0
+k <- 0
+while ecounter < |V|−1 do
+    k <- k + 1
+    if ET ∪{eik} is acyclic
+        ET <- ET ∪ {eik}; 
+        ecounter <- ecounter +1
+return ET
+
+Time complexity: O(|E|log|E|)
