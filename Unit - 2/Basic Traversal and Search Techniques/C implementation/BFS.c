@@ -1,6 +1,5 @@
 //Implement BFS algorithm on a graph represented as Adjacency matrix
 #include<stdio.h>
-#include<stdio.h>
 #define MAX 100
 
 int count = 0, queue[MAX], front = 0, rear = -1;
