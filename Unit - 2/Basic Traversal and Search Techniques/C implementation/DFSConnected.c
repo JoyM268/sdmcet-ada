@@ -1,6 +1,5 @@
 //Program to check if graph is connected or not using dfs
 #include<stdio.h>
-#include<stdio.h>
 #define MAX 100
 
 int count = 0;
