@@ -1,98 +1,98 @@
-    //Program to check if graph is cyclic or not using bfs
-    #include<stdio.h>
-    #define MAX 100
+//Program to check if graph is cyclic or not using bfs
+#include<stdio.h>
+#define MAX 100
 
-    int count = 0, queue[MAX], front = 0, rear = -1;
-    void insertQueue(int element)
+int count = 0, queue[MAX], front = 0, rear = -1;
+void insertQueue(int element)
+{
+    queue[++rear] = element;
+}
+
+void deleteQueue()
+{
+    queue[front++];
+    if(front > rear)
     {
-        queue[++rear] = element;
+        front = 0;
+        rear = -1;
     }
+}
 
-    void deleteQueue()
+void readMatrix(int matrix[][MAX], int n)
+{
+    int i, j;
+    for(i = 0; i < n; i++)
     {
-        queue[front++];
-        if(front > rear)
+        for(j = 0; j < n; j++)
         {
-            front = 0;
-            rear = -1;
+            scanf("%d", &matrix[i][j]);
         }
     }
+}
 
-    void readMatrix(int matrix[][MAX], int n)
+void markUnvisited(int visitedNodes[], int nodeCount)
+{
+    int i;
+    for(i = 0; i < nodeCount; i++)
     {
-        int i, j;
-        for(i = 0; i < n; i++)
+        visitedNodes[i] = 0;
+    }
+}
+
+int bfs(int v, int graph[][MAX], int visitedNodes[], int nodeCount)
+{
+    insertQueue(v);
+    while (front <= rear)
+    {
+        int frontElement = queue[front], w;
+        deleteQueue();
+        if (visitedNodes[frontElement] != 0 || graph[frontElement][frontElement] == 1)
         {
-            for(j = 0; j < n; j++)
+            return 1;
+        }
+        count++;
+        visitedNodes[frontElement] = count;
+        for (w = 0; w < nodeCount; w++)
+        {
+            if (graph[frontElement][w] == 1 && visitedNodes[w] == 0)
             {
-                scanf("%d", &matrix[i][j]);
+                insertQueue(w);
             }
         }
     }
+    return 0;
+}
 
-    void markUnvisited(int visitedNodes[], int nodeCount)
+int isCyclic(int graph[][MAX], int visitedNodes[], int nodeCount)
+{
+    int v;
+    for(v = 0; v < nodeCount; v++)
     {
-        int i;
-        for(i = 0; i < nodeCount; i++)
+        if(visitedNodes[v] == 0)
         {
-            visitedNodes[i] = 0;
-        }
-    }
-
-    int bfs(int v, int graph[][MAX], int visitedNodes[], int nodeCount)
-    {
-        insertQueue(v);
-        while (front <= rear)
-        {
-            int frontElement = queue[front], w;
-            deleteQueue();
-            if (visitedNodes[frontElement] != 0 || graph[frontElement][frontElement] == 1)
-            {
+            if(bfs(v, graph, visitedNodes, nodeCount) == 1){
                 return 1;
             }
-            count++;
-            visitedNodes[frontElement] = count;
-            for (w = 0; w < nodeCount; w++)
-            {
-                if (graph[frontElement][w] == 1 && visitedNodes[w] == 0)
-                {
-                    insertQueue(w);
-                }
-            }
         }
-        return 0;
     }
+    return 0;
+}
 
-    int isCyclic(int graph[][MAX], int visitedNodes[], int nodeCount)
+int main()
+{
+    int nodeCount, graph[MAX][MAX], visitedNodes[MAX];
+    printf("Enter the number of nodes: ");
+    scanf("%d", &nodeCount);
+    printf("Enter the adjacency matrix:\n");
+    readMatrix(graph, nodeCount);
+    markUnvisited(visitedNodes, nodeCount);
+    if(isCyclic(graph, visitedNodes, nodeCount))
     {
-        int v;
-        for(v = 0; v < nodeCount; v++)
-        {
-            if(visitedNodes[v] == 0)
-            {
-                if(bfs(v, graph, visitedNodes, nodeCount) == 1){
-                    return 1;
-                }
-            }
-        }
-        return 0;
+        printf("The graph is cyclic\n");
     }
-
-    int main()
+    else
     {
-        int nodeCount, graph[MAX][MAX], visitedNodes[MAX];
-        printf("Enter the number of nodes: ");
-        scanf("%d", &nodeCount);
-        printf("Enter the adjacency matrix:\n");
-        readMatrix(graph, nodeCount);
-        markUnvisited(visitedNodes, nodeCount);
-        if(isCyclic(graph, visitedNodes, nodeCount))
-        {
-            printf("The graph is cyclic\n");
-        }
-        else
-        {
-            printf("The graph is acyclic\n");
-        }
-        return 0;
+        printf("The graph is acyclic\n");
     }
+    return 0;
+}
